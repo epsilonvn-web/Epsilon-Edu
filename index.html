@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; img-src 'self' data:; connect-src 'self' https://script.google.com https://script.googleusercontent.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+  <title>Epsilon Edu - Tiến bộ từng ngày</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root{
+      --pink:#ec4899;--pink-50:#fdf2f8;--pink-100:#fce7f3;--purple:#7c3aed;--violet:#a855f7;
+      --sky:#0284c7;--sky-50:#f0f9ff;--green:#16a34a;--amber:#f59e0b;--blue:#1827f2;
+      --text:#475569;--title:#334155;--line:#f3d4e5;--radius:20px;--max:72rem;
+    }
+    *{box-sizing:border-box} html{background:#fff} body{margin:0;background:#fff;color:var(--text);font-family:'Quicksand','Nunito',sans-serif;min-height:100vh}
+    button,input,select{font:inherit} button{cursor:pointer}.hidden{display:none!important}
+    .page{width:min(100% - 16px,var(--max));margin:0 auto;padding-bottom:8px}
+    .topbar{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:10px;align-items:center;padding:8px 0}
+    .brand-btn{width:102px;height:66px;border:1px solid #f5c5df;border-radius:16px;background:linear-gradient(135deg,#fff7fb,#f5f3ff);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--purple);font-weight:900;box-shadow:0 3px 10px rgba(76,29,149,.08)}
+    .brand-btn strong{font-size:16px}.brand-btn small{font-size:9px;color:var(--pink)}
+    .topnav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+    .nav-btn{min-height:62px;border-radius:16px;border:1px solid;display:flex;align-items:center;justify-content:center;gap:7px;font-weight:900;font-size:15px;background:#fff;box-shadow:0 3px 9px rgba(76,29,149,.06)}
+    .nav-btn[data-view="catalog"]{background:#f3e8ff;color:#7c3aed;border-color:#ddd6fe}.nav-btn[data-view="access"]{background:#e0f2fe;color:#0369a1;border-color:#bae6fd}.nav-btn[data-view="account"]{background:#fce7f3;color:#be185d;border-color:#fbcfe8}.nav-btn.active{color:#fff;background:linear-gradient(135deg,#ec4899,#a855f7 55%,#7c3aed);border-color:#d946ef}
+    .top-actions{display:flex;align-items:center;gap:7px;justify-content:flex-end}.icon-btn,.user-btn{height:46px;border:1px solid #f5c5df;border-radius:14px;background:#fff7fb;color:var(--purple);font-weight:900;box-shadow:0 2px 7px rgba(76,29,149,.06)}
+    .icon-btn{width:46px;position:relative}.badge{position:absolute;right:-4px;top:-5px;min-width:19px;height:19px;padding:0 5px;border-radius:999px;background:#ef4444;color:#fff;font-size:10px;display:flex;align-items:center;justify-content:center}
+    .user-btn{padding:0 12px;max-width:170px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.login-btn{padding:0 15px;background:linear-gradient(135deg,#ec4899,#a855f7);color:#fff;border-color:#d946ef}
+    .hero{position:relative;aspect-ratio:6/1;border-radius:0;overflow:hidden;background:linear-gradient(105deg,#e0f2fe 0%,#fdf2f8 42%,#f5f3ff 65%,#dcfce7 100%);display:flex;align-items:center;justify-content:center;text-align:center}
+    .hero:before,.hero:after{content:'🌳  📚  ✏️';position:absolute;font-size:clamp(20px,3vw,42px);opacity:.8;bottom:12%;letter-spacing:8px}.hero:before{left:3%}.hero:after{right:3%;transform:scaleX(-1)}
+    .hero h1{margin:0;color:var(--blue);font-size:clamp(25px,3.1vw,45px);font-weight:900;letter-spacing:-.02em}.hero p{margin:5px 0 0;color:#7e22ce;font-size:clamp(12px,1.3vw,18px);font-weight:900}
+    .content{padding:14px 0 8px}.section-title{text-align:center;margin:2px 0 12px}.section-title h2{margin:0;color:#7c3aed;font-size:24px;font-weight:900}.section-title p{margin:4px 0 0;font-size:13px;font-weight:800;color:#94a3b8}
+    .grade-tabs{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:14px}.grade-btn{min-width:82px;height:38px;border-radius:12px;border:1px solid #e9d5ff;background:#faf5ff;color:#7e22ce;font-weight:900}.grade-btn.active{color:#fff;background:linear-gradient(135deg,#ec4899,#a855f7);border-color:#c026d3}
+    .subject-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.subject-card{border-radius:22px;border:1px solid #eadff5;padding:15px;min-height:190px;display:flex;flex-direction:column;background:#fff;transition:.18s}.subject-card:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(76,29,149,.08)}.subject-card.sky{background:#f0f9ff;border-color:#bae6fd}.subject-card.pink{background:#fdf2f8;border-color:#fbcfe8}.subject-card.violet{background:#f5f3ff;border-color:#ddd6fe}.subject-icon{font-size:35px}.subject-card h3{margin:8px 0 2px;font-size:21px;color:#334155}.subject-meta{font-size:12px;font-weight:800;color:#94a3b8}.access-pill{display:inline-flex;align-self:flex-start;margin-top:10px;border-radius:999px;padding:5px 9px;font-size:11px;font-weight:900;background:#fff;border:1px solid #e2e8f0}.access-pill.vip{color:#7c3aed;border-color:#c4b5fd;background:#f5f3ff}.access-pill.trial{color:#b45309;border-color:#fde68a;background:#fffbeb}.access-pill.regular{color:#64748b}.subject-actions{margin-top:auto;padding-top:12px;display:flex;gap:8px}.primary,.secondary,.danger{border:0;border-radius:12px;padding:9px 12px;font-weight:900}.primary{background:linear-gradient(135deg,#ec4899,#a855f7);color:#fff}.secondary{background:#fff;border:1px solid #e9d5ff;color:#7e22ce}.danger{background:#fff1f2;border:1px solid #fecdd3;color:#e11d48}.subject-actions button{flex:1}.disabled-note{font-size:11px;color:#94a3b8;font-weight:800;margin-top:6px}
+    .panel{background:#fff;border:1px solid #f3d4e5;border-radius:22px;padding:18px}.panel h3{margin:0 0 12px;color:#7c3aed}.panel-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field label{display:block;font-size:12px;font-weight:900;color:#64748b;margin-bottom:5px}.field input,.field select{width:100%;height:43px;padding:0 12px;border:1.5px solid #e9d5ff;border-radius:12px;outline:none;background:#fff}.field input:focus,.field select:focus{border-color:#c084fc}.span-2{grid-column:1/-1}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.muted{font-size:12px;color:#94a3b8;font-weight:700}.request-list,.notification-list{display:grid;gap:8px}.request-row,.notification-row{border:1px solid #e9d5ff;border-radius:14px;padding:11px;background:#fff}.request-row strong,.notification-row strong{color:#475569}.row-top{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}.admin-grid{display:grid;grid-template-columns:1fr;gap:10px}.admin-request{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;border:1px solid #e9d5ff;border-radius:14px;padding:12px}.admin-actions{display:flex;gap:7px}
+    .empty{padding:28px;text-align:center;color:#94a3b8;font-weight:800;border:1px dashed #e9d5ff;border-radius:16px;background:#fafafa}.footer{height:76px;margin-top:10px;background:linear-gradient(180deg,#eff6ff,#fdf2f8);display:flex;align-items:center;justify-content:center;text-align:center;color:var(--blue)}.footer strong{font-size:17px}.footer small{display:block;font-size:12px;font-weight:800;margin-top:2px}
+    .modal{position:fixed;inset:0;background:rgba(15,23,42,.55);backdrop-filter:blur(3px);display:flex;align-items:center;justify-content:center;padding:14px;z-index:50}.modal-card{width:min(100%,430px);max-height:94vh;overflow:auto;background:#fff;border:2px solid #fbcfe8;border-radius:28px;padding:20px;box-shadow:0 25px 70px rgba(15,23,42,.25)}.modal-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}.modal-head h3{margin:0;color:#7c3aed}.close-btn{width:34px;height:34px;border-radius:50%;border:1px solid #fbcfe8;background:#fff;color:#64748b}.auth-tabs{display:grid;grid-template-columns:1fr 1fr;background:#fdf2f8;border:1px solid #fbcfe8;border-radius:14px;padding:4px;margin-bottom:12px}.auth-tab{height:38px;border:0;border-radius:10px;background:transparent;color:#94a3b8;font-weight:900}.auth-tab.active{background:#fff;color:#ec4899;box-shadow:0 2px 7px rgba(76,29,149,.07)}.form{display:grid;gap:10px}.message{font-size:12px;font-weight:800;min-height:16px;color:#e11d48}.otp-hint{background:#f0fdf4;border:1px solid #bbf7d0;color:#15803d;border-radius:12px;padding:10px;font-size:12px;font-weight:800}.toast-host{position:fixed;right:14px;bottom:14px;display:grid;gap:8px;z-index:100}.toast{min-width:250px;max-width:360px;padding:12px 14px;border-radius:14px;background:#fff;border:1px solid #e9d5ff;box-shadow:0 10px 30px rgba(15,23,42,.12);font-size:13px;font-weight:800;color:#475569}
+    @media(max-width:767px){.page{width:min(100% - 8px,var(--max))}.topbar{grid-template-columns:86px minmax(0,1fr);grid-template-rows:auto auto;gap:7px;padding:7px 0}.brand-btn{width:86px;height:58px;grid-column:1;grid-row:1}.top-actions{grid-column:2;grid-row:1}.topnav{grid-column:1/-1;grid-row:2;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.nav-btn{min-height:52px;font-size:13px;flex-direction:row}.hero{aspect-ratio:4/1}.hero:before,.hero:after{font-size:18px;letter-spacing:3px}.hero h1{font-size:clamp(20px,7vw,29px)}.hero p{font-size:11px}.subject-grid{grid-template-columns:1fr}.panel-grid{grid-template-columns:1fr}.span-2{grid-column:auto}.user-btn{max-width:120px;height:42px}.icon-btn{width:42px;height:42px}.footer{height:64px}.admin-request{grid-template-columns:1fr}.admin-actions{justify-content:flex-end}}
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <button id="brand-home" class="brand-btn" title="Epsilon Edu Home"><strong>Epsilon Edu</strong><small>Tiến bộ từng ngày</small></button>
+      <nav class="topnav" aria-label="Điều hướng Epsilon Edu">
+        <button class="nav-btn active" data-view="catalog"><span>🎓</span><span>Chương trình</span></button>
+        <button class="nav-btn" data-view="access"><span>🔑</span><span>Quyền học</span></button>
+        <button class="nav-btn" data-view="account"><span>👤</span><span>Tài khoản</span></button>
+      </nav>
+      <div class="top-actions">
+        <button id="notification-btn" class="icon-btn" title="Thông báo"><i class="fa-regular fa-bell"></i><span id="notification-badge" class="badge hidden">0</span></button>
+        <button id="user-btn" class="user-btn login-btn">Đăng nhập</button>
+      </div>
+    </header>
+
+    <section class="hero" aria-label="Epsilon Edu">
+      <div><h1>EPSILON EDU</h1><p>Tiến bộ từng ngày</p></div>
+    </section>
+
+    <main class="content">
+      <section id="view-catalog">
+        <div class="section-title"><h2>Chương trình học</h2><p>Chọn lớp, sau đó chọn môn học phù hợp.</p></div>
+        <div id="grade-tabs" class="grade-tabs"></div>
+        <div id="subject-grid" class="subject-grid"></div>
+      </section>
+
+      <section id="view-access" class="hidden">
+        <div class="section-title"><h2>Quyền học tập</h2><p>Regular là mặc định; Trial/VIP được cấp theo từng môn.</p></div>
+        <div id="access-content" class="panel"></div>
+      </section>
+
+      <section id="view-account" class="hidden">
+        <div class="section-title"><h2>Tài khoản Epsilon</h2><p>Một tài khoản dùng chung cho toàn hệ thống.</p></div>
+        <div id="account-content" class="panel"></div>
+      </section>
+
+      <section id="view-notifications" class="hidden">
+        <div class="section-title"><h2>Thông báo</h2><p>Các thay đổi quan trọng về tài khoản và quyền học.</p></div>
+        <div class="panel"><div id="notification-list" class="notification-list"></div></div>
+      </section>
+
+      <section id="view-admin" class="hidden">
+        <div class="section-title"><h2>Quản trị Epsilon Edu</h2><p>Duyệt yêu cầu Trial/VIP từ một nơi duy nhất.</p></div>
+        <div class="panel"><div id="admin-content" class="admin-grid"></div></div>
+      </section>
+    </main>
+
+    <footer class="footer"><div><strong>Epsilon Edu - Tiến bộ từng ngày</strong><small>Học tập thống nhất · Tài khoản dùng chung · Mỗi môn là một module độc lập</small></div></footer>
+  </div>
+
+  <div id="auth-modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <div class="modal-head"><h3 id="auth-title">Epsilon Account</h3><button class="close-btn" data-close="auth-modal">✕</button></div>
+      <div class="auth-tabs"><button id="auth-tab-login" class="auth-tab active">Đăng nhập</button><button id="auth-tab-register" class="auth-tab">Đăng ký</button></div>
+      <form id="login-form" class="form">
+        <div class="field"><label>Email</label><input id="login-email" type="email" maxlength="254" autocomplete="email" required></div>
+        <div class="field"><label>Mật khẩu</label><input id="login-password" type="password" maxlength="128" autocomplete="current-password" required></div>
+        <button class="primary" type="submit">Đăng nhập</button><div id="login-message" class="message"></div>
+      </form>
+      <form id="register-form" class="form hidden">
+        <div class="field"><label>Email</label><input id="reg-email" type="email" maxlength="254" autocomplete="email" required></div>
+        <div class="field"><label>Mật khẩu</label><input id="reg-password" type="password" minlength="8" maxlength="128" autocomplete="new-password" required></div>
+        <div class="field"><label>Họ và tên</label><input id="reg-name" maxlength="80" required></div>
+        <div class="panel-grid"><div class="field"><label>Khối</label><select id="reg-grade"></select></div><div class="field"><label>Lớp</label><input id="reg-class" maxlength="30" placeholder="Ví dụ: 2A"></div></div>
+        <div class="field"><label>Năm học</label><input id="reg-year" maxlength="20" placeholder="2026-2027"></div>
+        <button class="primary" type="submit">Gửi OTP xác thực</button><div id="register-message" class="message"></div>
+      </form>
+      <form id="otp-form" class="form hidden">
+        <div class="otp-hint">OTP 6 số đã được gửi về email. Mã có hiệu lực trong khoảng 10 phút.</div>
+        <div class="field"><label>OTP</label><input id="otp-code" inputmode="numeric" maxlength="6" pattern="[0-9]{6}" required></div>
+        <button class="primary" type="submit">Xác thực và tạo tài khoản</button><button id="otp-back" class="secondary" type="button">Quay lại</button><div id="otp-message" class="message"></div>
+      </form>
+    </div>
+  </div>
+
+  <div id="request-modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-card"><div class="modal-head"><h3>Yêu cầu quyền học</h3><button class="close-btn" data-close="request-modal">✕</button></div>
+      <form id="request-form" class="form"><input id="request-subject-id" type="hidden"><div id="request-subject-name" class="otp-hint"></div>
+        <div class="field"><label>Loại quyền</label><select id="request-type"><option value="trial">Trial</option><option value="vip">VIP</option></select></div>
+        <div class="field"><label>Ghi chú</label><input id="request-note" maxlength="200" placeholder="Có thể để trống"></div>
+        <button class="primary" type="submit">Gửi yêu cầu</button><div id="request-message" class="message"></div></form>
+    </div>
+  </div>
+
+  <div id="toast-host" class="toast-host"></div>
+  <script src="app.js"></script>
+</body>
+</html>

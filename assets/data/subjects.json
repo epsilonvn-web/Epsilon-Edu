@@ -1,0 +1,101 @@
+[
+  {
+    "id": "MATH-1",
+    "name": "Toán 1",
+    "subject": "math",
+    "subjectLabel": "Toán",
+    "grade": 1,
+    "url": "",
+    "enabled": false,
+    "accent": "sky",
+    "icon": "➗"
+  },
+  {
+    "id": "VI-1",
+    "name": "Tiếng Việt 1",
+    "subject": "vietnamese",
+    "subjectLabel": "Tiếng Việt",
+    "grade": 1,
+    "url": "",
+    "enabled": false,
+    "accent": "pink",
+    "icon": "📚"
+  },
+  {
+    "id": "EN-1",
+    "name": "Tiếng Anh 1",
+    "subject": "english",
+    "subjectLabel": "Tiếng Anh",
+    "grade": 1,
+    "url": "",
+    "enabled": false,
+    "accent": "violet",
+    "icon": "🔤"
+  },
+  {
+    "id": "MATH-2",
+    "name": "Toán 2",
+    "subject": "math",
+    "subjectLabel": "Toán",
+    "grade": 2,
+    "url": "",
+    "enabled": false,
+    "accent": "sky",
+    "icon": "➗"
+  },
+  {
+    "id": "VI-2",
+    "name": "Tiếng Việt 2",
+    "subject": "vietnamese",
+    "subjectLabel": "Tiếng Việt",
+    "grade": 2,
+    "url": "",
+    "enabled": false,
+    "accent": "pink",
+    "icon": "📚"
+  },
+  {
+    "id": "EN-2",
+    "name": "Tiếng Anh 2",
+    "subject": "english",
+    "subjectLabel": "Tiếng Anh",
+    "grade": 2,
+    "url": "",
+    "enabled": false,
+    "accent": "violet",
+    "icon": "🔤"
+  },
+  {
+    "id": "MATH-3",
+    "name": "Toán 3",
+    "subject": "math",
+    "subjectLabel": "Toán",
+    "grade": 3,
+    "url": "",
+    "enabled": false,
+    "accent": "sky",
+    "icon": "➗"
+  },
+  {
+    "id": "VI-3",
+    "name": "Tiếng Việt 3",
+    "subject": "vietnamese",
+    "subjectLabel": "Tiếng Việt",
+    "grade": 3,
+    "url": "",
+    "enabled": false,
+    "accent": "pink",
+    "icon": "📚"
+  },
+  {
+    "id": "EN-3",
+    "name": "Tiếng Anh 3",
+    "subject": "english",
+    "subjectLabel": "Tiếng Anh",
+    "grade": 3,
+    "url": "",
+    "enabled": false,
+    "accent": "violet",
+    "icon": "🔤"
+  }
+]
