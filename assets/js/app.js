@@ -1,4 +1,4 @@
-console.info('Epsilon Edu frontend build 1.4.3-profile-saving');
+console.info('Epsilon Edu frontend build 1.5.0-games-tools-pilot');
 'use strict';
 
 const EE = {
@@ -168,13 +168,46 @@ function renderAll() {
   renderTopbar();
 }
 
+function hasAnyPremiumAccess() {
+  if (EE.user?.role === 'admin') return true;
+  return !!EE.user && Object.values(EE.access || {}).some(a => {
+    const type = String(a?.type || '').toLowerCase();
+    return type === 'trial' || type === 'vip';
+  });
+}
+
+function openValueModule(view) {
+  if (!EE.user) {
+    toast('Đăng nhập Epsilon Edu để tiếp tục.');
+    openAuth('login');
+    return false;
+  }
+  if (!hasAnyPremiumAccess()) {
+    toast('Games và Tools dành cho Admin hoặc tài khoản đang có Trial/VIP ở ít nhất một môn học.');
+    return false;
+  }
+  const key = view === 'games' ? 'gamesUrl' : 'toolsUrl';
+  const rawUrl = String(EE.config?.[key] || '').trim();
+  if (!rawUrl) return true;
+  try {
+    const target = new URL(rawUrl, location.origin);
+    if (target.origin !== location.origin) throw new Error('MODULE_ORIGIN');
+    location.href = target.href;
+    return false;
+  } catch (_) {
+    toast('Đường dẫn module chưa được cấu hình hợp lệ.');
+    return false;
+  }
+}
+
 function showView(view) {
+  if ((view === 'games' || view === 'tools') && !openValueModule(view)) return;
   if (view === 'admin' && EE.user?.role !== 'admin') {
     toast('Bạn không có quyền Admin.');
     view = 'account';
   }
   EE.view = view;
-  ['catalog','access','account','notifications','admin'].forEach(v => $('#view-' + v)?.classList.toggle('hidden', v !== view));
+  ['catalog','games','tools','access','account','notifications','admin'].forEach(v => $('#view-' + v)?.classList.toggle('hidden', v !== view));
   $$('.nav-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.view === view));
   if (view === 'notifications' && EE.user) refreshNotifications();
 }
