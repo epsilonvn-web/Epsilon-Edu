@@ -23,9 +23,9 @@
     .topbar{display:grid;grid-template-columns:auto minmax(0,1fr) max-content;gap:10px;align-items:center;padding:8px 0}
     .brand-btn{width:102px;height:66px;border:1px solid #f5c5df;border-radius:16px;background:linear-gradient(135deg,#fff7fb,#f5f3ff);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--purple);font-weight:900;box-shadow:0 3px 10px rgba(76,29,149,.08)}
     .brand-btn strong{font-size:16px}.brand-btn small{font-size:9px;color:var(--pink)}
-    .topnav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.topnav.admin-visible{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .topnav{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px}.topnav.admin-visible{grid-template-columns:repeat(6,minmax(0,1fr))}
     .nav-btn{min-width:0;min-height:62px;border-radius:16px;border:1px solid;display:flex;align-items:center;justify-content:center;gap:7px;padding:0 10px;font-weight:900;font-size:15px;white-space:nowrap;background:#fff;box-shadow:0 3px 9px rgba(76,29,149,.06)}
-    .nav-btn[data-view="catalog"]{background:#f3e8ff;color:#7c3aed;border-color:#ddd6fe}.nav-btn[data-view="access"]{background:#e0f2fe;color:#0369a1;border-color:#bae6fd}.nav-btn[data-view="admin"]{background:#ecfdf5;color:#047857;border-color:#a7f3d0}.nav-btn[data-view="account"]{background:#fce7f3;color:#be185d;border-color:#fbcfe8}.nav-btn.active{color:#fff;background:linear-gradient(135deg,#ec4899,#a855f7 55%,#7c3aed);border-color:#d946ef}
+    .nav-btn[data-view="catalog"]{background:#f3e8ff;color:#7c3aed;border-color:#ddd6fe}.nav-btn[data-view="games"]{background:#fff7ed;color:#c2410c;border-color:#fed7aa}.nav-btn[data-view="tools"]{background:#ecfeff;color:#0e7490;border-color:#a5f3fc}.nav-btn[data-view="access"]{background:#e0f2fe;color:#0369a1;border-color:#bae6fd}.nav-btn[data-view="admin"]{background:#ecfdf5;color:#047857;border-color:#a7f3d0}.nav-btn[data-view="account"]{background:#fce7f3;color:#be185d;border-color:#fbcfe8}.nav-btn.active{color:#fff;background:linear-gradient(135deg,#ec4899,#a855f7 55%,#7c3aed);border-color:#d946ef}
     .top-actions{display:flex;align-items:center;gap:7px;justify-content:flex-end;min-width:max-content}.icon-btn,.user-btn{height:46px;border:1px solid #f5c5df;border-radius:14px;background:#fff7fb;color:var(--purple);font-weight:900;box-shadow:0 2px 7px rgba(76,29,149,.06)}
     .icon-btn{width:46px;position:relative}.badge{position:absolute;right:-4px;top:-5px;min-width:19px;height:19px;padding:0 5px;border-radius:999px;background:#ef4444;color:#fff;font-size:10px;display:flex;align-items:center;justify-content:center}
     .user-btn{padding:0 14px;max-width:none;white-space:nowrap;overflow:visible;text-overflow:clip;flex:0 0 auto}.login-btn{padding:0 15px;background:linear-gradient(135deg,#ec4899,#a855f7);color:#fff;border-color:#d946ef}
@@ -51,7 +51,7 @@
     .empty{padding:28px;text-align:center;color:#94a3b8;font-weight:800;border:1px dashed #e9d5ff;border-radius:16px;background:#fafafa}.footer{height:76px;margin-top:10px;background:linear-gradient(180deg,#eff6ff,#fdf2f8);display:flex;align-items:center;justify-content:center;text-align:center;color:var(--blue)}.footer strong{font-size:17px}.footer small{display:block;font-size:12px;font-weight:800;margin-top:2px}
     .modal{position:fixed;inset:0;background:rgba(15,23,42,.55);backdrop-filter:blur(3px);display:flex;align-items:center;justify-content:center;padding:14px;z-index:50}.modal-card{width:min(100%,430px);max-height:94vh;overflow:auto;background:#fff;border:2px solid #fbcfe8;border-radius:28px;padding:20px;box-shadow:0 25px 70px rgba(15,23,42,.25)}.modal-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}.modal-head h3{margin:0;color:#7c3aed}.close-btn{width:34px;height:34px;border-radius:50%;border:1px solid #fbcfe8;background:#fff;color:#64748b}.auth-tabs{display:grid;grid-template-columns:1fr 1fr;background:#fdf2f8;border:1px solid #fbcfe8;border-radius:14px;padding:4px;margin-bottom:12px}.auth-tab{height:38px;border:0;border-radius:10px;background:transparent;color:#94a3b8;font-weight:900}.auth-tab.active{background:#fff;color:#ec4899;box-shadow:0 2px 7px rgba(76,29,149,.07)}.form{display:grid;gap:10px}.message{font-size:12px;font-weight:800;min-height:16px;color:#e11d48}.otp-hint{background:#f0fdf4;border:1px solid #bbf7d0;color:#15803d;border-radius:12px;padding:10px;font-size:12px;font-weight:800}.toast-host{position:fixed;right:14px;bottom:14px;display:grid;gap:8px;z-index:100}.toast{min-width:250px;max-width:360px;padding:12px 14px;border-radius:14px;background:#fff;border:1px solid #e9d5ff;box-shadow:0 10px 30px rgba(15,23,42,.12);font-size:13px;font-weight:800;color:#475569}
     @media(max-width:980px) and (min-width:768px){.topbar{grid-template-columns:90px minmax(0,1fr);grid-template-rows:auto auto}.brand-btn{width:90px;height:58px;grid-column:1;grid-row:1}.top-actions{grid-column:2;grid-row:1}.topnav{grid-column:1/-1;grid-row:2}.nav-btn{min-height:50px;font-size:14px}.user-btn{height:42px}.icon-btn{width:42px;height:42px}}
-    @media(max-width:767px){.page{width:min(100% - 8px,var(--max))}.topbar{grid-template-columns:86px minmax(0,1fr);grid-template-rows:auto auto;gap:7px;padding:7px 0}.brand-btn{width:86px;height:58px;grid-column:1;grid-row:1}.top-actions{grid-column:2;grid-row:1}.topnav{grid-column:1/-1;grid-row:2;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.topnav.admin-visible{grid-template-columns:repeat(4,minmax(0,1fr))}.nav-btn{min-height:52px;font-size:13px;flex-direction:row}.hero{aspect-ratio:4/1}.hero:before,.hero:after{font-size:18px;letter-spacing:3px}.hero h1{font-size:clamp(20px,7vw,29px)}.hero p{font-size:11px}.subject-grid{grid-template-columns:1fr}.panel-grid{grid-template-columns:1fr}.span-2{grid-column:auto}.user-btn{max-width:120px;height:42px}.icon-btn{width:42px;height:42px}.footer{height:64px}.admin-request{grid-template-columns:1fr}.admin-actions{justify-content:flex-end}.admin-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.admin-user-row{grid-template-columns:1fr}.admin-user-tools{justify-content:stretch}.admin-user-tools input,.admin-user-tools select{width:100%}.admin-stat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.admin-subject-row{grid-template-columns:1fr 1fr}.admin-subject-row strong{grid-column:1/-1}}
+    @media(max-width:767px){.page{width:min(100% - 8px,var(--max))}.topbar{grid-template-columns:86px minmax(0,1fr);grid-template-rows:auto auto;gap:7px;padding:7px 0}.brand-btn{width:86px;height:58px;grid-column:1;grid-row:1}.top-actions{grid-column:2;grid-row:1}.topnav,.topnav.admin-visible{grid-column:1/-1;grid-row:2;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.nav-btn{min-height:52px;font-size:13px;flex-direction:row}.hero{aspect-ratio:4/1}.hero:before,.hero:after{font-size:18px;letter-spacing:3px}.hero h1{font-size:clamp(20px,7vw,29px)}.hero p{font-size:11px}.subject-grid{grid-template-columns:1fr}.panel-grid{grid-template-columns:1fr}.span-2{grid-column:auto}.user-btn{max-width:120px;height:42px}.icon-btn{width:42px;height:42px}.footer{height:64px}.admin-request{grid-template-columns:1fr}.admin-actions{justify-content:flex-end}.admin-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.admin-user-row{grid-template-columns:1fr}.admin-user-tools{justify-content:stretch}.admin-user-tools input,.admin-user-tools select{width:100%}.admin-stat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.admin-subject-row{grid-template-columns:1fr 1fr}.admin-subject-row strong{grid-column:1/-1}}
   </style>
 </head>
 <body>
@@ -60,6 +60,8 @@
       <button id="brand-home" class="brand-btn" title="Epsilon Edu Home"><strong>Epsilon Edu</strong><small>Tiến bộ từng ngày</small></button>
       <nav class="topnav" aria-label="Điều hướng Epsilon Edu">
         <button class="nav-btn active" data-view="catalog"><span>🎓</span><span>Chương trình</span></button>
+        <button class="nav-btn" data-view="games"><span>🎮</span><span>Games</span></button>
+        <button class="nav-btn" data-view="tools"><span>🧰</span><span>Tools</span></button>
         <button class="nav-btn" data-view="access"><span>🔑</span><span>Quyền học</span></button>
         <button id="admin-nav-btn" class="nav-btn hidden" data-view="admin"><span>🛠️</span><span>Quản lý</span></button>
         <button class="nav-btn" data-view="account"><span>👤</span><span>Tài khoản</span></button>
@@ -79,6 +81,16 @@
         <div class="section-title"><h2>Chương trình học</h2><p>Chọn lớp, sau đó chọn môn học phù hợp.</p></div>
         <div id="grade-tabs" class="grade-tabs"></div>
         <div id="subject-grid" class="subject-grid"></div>
+      </section>
+
+      <section id="view-games" class="hidden">
+        <div class="section-title"><h2>Games</h2><p>Dành cho tài khoản đang có Trial/VIP ở ít nhất một môn học.</p></div>
+        <div class="panel" style="min-height:220px;"></div>
+      </section>
+
+      <section id="view-tools" class="hidden">
+        <div class="section-title"><h2>Tools</h2><p>Dành cho tài khoản đang có Trial/VIP ở ít nhất một môn học.</p></div>
+        <div class="panel" style="min-height:220px;"></div>
       </section>
 
       <section id="view-access" class="hidden">
@@ -146,6 +158,6 @@
   </div>
 
   <div id="toast-host" class="toast-host"></div>
-  <script src="assets/js/app.js?v=1.4.4-friendly-api-error"></script>
+  <script src="assets/js/app.js?v=1.5.1-games-tools-admin-bypass"></script>
 </body>
 </html>
